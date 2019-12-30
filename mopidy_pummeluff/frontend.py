@@ -38,7 +38,8 @@ class PummeluffFrontend(pykka.ThreadingActor, mopidy_core.CoreListener):
         '''
         Start GPIO handler & tag reader threads.
         '''
-        self.gpio_handler.start()
+        #all GPIO stuff will be handled by https://github.com/pimoroni/mopidy-raspberry-gpio
+        #self.gpio_handler.start()
         self.tag_reader.start()
 
     def on_stop(self):
