@@ -40,6 +40,7 @@ class PummeluffFrontend(pykka.ThreadingActor, mopidy_core.CoreListener):
         '''
         #all GPIO stuff will be handled by https://github.com/pimoroni/mopidy-raspberry-gpio
         #self.gpio_handler.start()
+        LOGGER.info('RFID listener started')
         self.tag_reader.start()
 
     def on_stop(self):
@@ -48,3 +49,4 @@ class PummeluffFrontend(pykka.ThreadingActor, mopidy_core.CoreListener):
         stop their operations.
         '''
         self.stop_event.set()
+        LOGGER.info('pummeluff threads stopped')
